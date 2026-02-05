@@ -13,7 +13,7 @@
     <script>
         const switchBtn = document.getElementById("switchBtn");
 
-        const isEncodePage = location.pathname.includes("main.html");
+        const isEncodePage = location.pathname.includes("index.html");
 
         if (isEncodePage) {
             switchBtn.textContent = "Switch to Decode";
@@ -23,7 +23,7 @@
         } else {
             switchBtn.textContent = "Switch to Encode";
             switchBtn.onclick = () => {
-                location.href = "main.html";
+                location.href = "index.html";
             };
         }
     </script>
