@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LTXXI-code Encoder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button id="switchBtn">Switch to Decode</button>
+
+    <script>
+        const switchBtn = document.getElementById("switchBtn");
+
+        const isEncodePage = location.pathname.includes("main.html");
+
+        if (isEncodePage) {
+            switchBtn.textContent = "Switch to Decode";
+            switchBtn.onclick = () => {
+                location.href = "decode.html";
+            };
+        } else {
+            switchBtn.textContent = "Switch to Encode";
+            switchBtn.onclick = () => {
+                location.href = "main.html";
+            };
+        }
+    </script>
+
+
+    <div class="container">
+        <h1>LTXXI-code · Decoder</h1>
+
+        <textarea id="inputText" placeholder="Enter your code"></textarea>
+
+        <button id="encodeBtn">Encode</button>
+
+        <textarea id="outputText" placeholder="Output" readonly></textarea>
+    </div>
+
+    <script src="decode.js"></script>
+    <script>
+        const input = document.getElementById("inputText");
+        const output = document.getElementById("outputText");
+        const btn = document.getElementById("encodeBtn");
+
+        btn.addEventListener("click", () => {
+            output.value = decodeLTXXI(input.value);
+        });
+    </script>
+</body>
+
+</html>
